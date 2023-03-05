@@ -3,9 +3,9 @@ public abstract class Rules { //abstract class: a class that can't be instantiat
     public abstract boolean shouldSurvive(int liveNeighbors);
 
     public CellState applyRules(CellState cellState, int liveNeighbors) { //an abstract class can have working methods too
-        if (cellState == CellState.DEAD && shouldBeBorn(liveNeighbors) == true){
+        if (cellState == CellState.DEAD && shouldBeBorn(liveNeighbors) == true) {
             return CellState.WILL_REVIVE;
-        } else if (cellState == CellState.ALIVE && shouldSurvive(liveNeighbors) == false){
+        } else if (cellState == CellState.ALIVE && shouldSurvive(liveNeighbors) == false) {
             return CellState.WILL_DIE;
         } else {
             return cellState;
